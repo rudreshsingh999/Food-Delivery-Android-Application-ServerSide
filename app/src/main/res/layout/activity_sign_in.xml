@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".SignIn">
+
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_marginRight="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_centerInParent="true"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <com.rengwuxian.materialedittext.MaterialEditText
+            android:id="@+id/edit_phone"
+            android:hint="@string/phone_nummber"
+            android:inputType="phone"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+        </com.rengwuxian.materialedittext.MaterialEditText>
+
+        <com.rengwuxian.materialedittext.MaterialEditText
+            android:id="@+id/edit_password"
+            android:hint="@string/password"
+            android:inputType="textPassword"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+        </com.rengwuxian.materialedittext.MaterialEditText>
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/signin"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginEnd="163dp"
+        android:layout_marginBottom="182dp"
+        android:text="@string/signin" />
+
+    <!--    <info.hoang8f.widget.FButton-->
+    <!--        android:layout_width="match_parent"-->
+    <!--        android:layout_height="wrap_content"-->
+    <!--        android:id="@+id/signIn"-->
+    <!--        android:text="Sign In"-->
+    <!--        android:textColor="@android:color/white"-->
+    <!--        android:layout_marginRight="8dp"-->
+    <!--        android:layout_marginLeft="8dp"-->
+    <!--        android:layout_alignParentBottom="true"-->
+    <!--        android:layout_margin="8dp"-->
+    <!--        app:cornerRadius="4dp">-->
+
+
+</RelativeLayout>
+
