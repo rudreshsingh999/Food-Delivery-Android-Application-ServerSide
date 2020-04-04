@@ -8,9 +8,10 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.app2server.Common.Common;
+import com.example.app2server.Model.User;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -63,16 +64,16 @@ public class SignIn extends AppCompatActivity {
                             startActivity(homeIntent);
                         }
                         else {
-                            Toast.makeText(SignIn.this, "Wrong Password", Toast.LENGTH_SHORT).show();
+                            Toast.makeText(SignIn.this, "Wrong Password.", Toast.LENGTH_SHORT).show();
                         }
                     }
                     else {
                         System.out.println(user.getName());
-                        Toast.makeText(SignIn.this, "Not a staff account", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(SignIn.this, "Not a staff account.", Toast.LENGTH_SHORT).show();
                     }
                 }
                 else {
-                    Toast.makeText(SignIn.this, "User doesn't exists", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(SignIn.this, "User doesn't exist.", Toast.LENGTH_SHORT).show();
                 }
             }
 
