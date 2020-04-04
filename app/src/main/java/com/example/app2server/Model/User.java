@@ -1,4 +1,4 @@
-package com.example.app2server;
+package com.example.app2server.Model;
 
 public class User {
     private String Name;
