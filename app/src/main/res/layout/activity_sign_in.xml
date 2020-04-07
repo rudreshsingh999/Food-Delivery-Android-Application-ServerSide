@@ -42,6 +42,17 @@
         android:layout_marginBottom="182dp"
         android:text="@string/signin" />
 
+    <com.google.android.gms.common.SignInButton
+        android:id = "@+id/googleBtn"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginEnd="140dp"
+        android:layout_marginBottom="45dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+    </com.google.android.gms.common.SignInButton>
+
     <!--    <info.hoang8f.widget.FButton-->
     <!--        android:layout_width="match_parent"-->
     <!--        android:layout_height="wrap_content"-->
