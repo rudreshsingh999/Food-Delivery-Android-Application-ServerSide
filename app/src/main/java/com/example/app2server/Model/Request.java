@@ -11,16 +11,26 @@ public class Request {
     private String total;
     private List<Order> foods;
     private String status;
+    private String distance;
     public Request() {
     }
 
-    public Request(String phone, String name, String address, String total, List<Order> foods) {
+    public Request(String phone, String name, String address, String total, List<Order> foods, String distance) {
         this.phone = phone;
         this.name = name;
         this.address = address;
         this.total = total;
         this.foods = foods;
         this.status = "0";
+        this.distance = distance;
+    }
+
+    public String getDistance() {
+        return distance;
+    }
+
+    public void setDistance(String distance) {
+        this.distance = distance;
     }
 
     public void setStatus(String status) {

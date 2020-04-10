@@ -82,10 +82,13 @@ public class Home extends AppCompatActivity implements NavigationView.OnNavigati
 
         int id = item.getItemId();
 
-        if(id == R.id.nav_orders)
-        {
+        if(id == R.id.nav_orders) {
             Intent orders = new Intent (Home.this, OrderStatus.class);
             startActivity(orders);
+        }
+        if(id == R.id.nav_distance) {
+            Intent dist = new Intent (Home.this, Radius.class);
+            startActivity(dist);
         }
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
