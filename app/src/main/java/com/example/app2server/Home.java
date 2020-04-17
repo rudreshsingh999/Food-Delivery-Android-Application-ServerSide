@@ -5,12 +5,16 @@ import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.Menu;
+import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.app2server.Common.Common;
+import com.example.app2server.Common.Distance;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.snackbar.Snackbar;
 import com.google.android.material.navigation.NavigationView;
+import com.rengwuxian.materialedittext.MaterialEditText;
 
 import androidx.annotation.NonNull;
 import androidx.core.view.GravityCompat;
@@ -26,10 +30,25 @@ public class Home extends AppCompatActivity implements NavigationView.OnNavigati
 
     private AppBarConfiguration mAppBarConfiguration;
     TextView txtfullName;
+    MaterialEditText distance;
+    Button set;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
+
+        distance = findViewById(R.id.dist);
+        set = findViewById(R.id.set);
+
+        set.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String r = distance.getText().toString();
+                Distance.distance = r;
+                Toast.makeText(Home.this, "Radius set to " + r, Toast.LENGTH_SHORT).show();
+            }
+        });
+
         Toolbar toolbar = findViewById(R.id.toolbar);
         toolbar.setTitle("Menu Management");
         setSupportActionBar(toolbar);
@@ -89,6 +108,10 @@ public class Home extends AppCompatActivity implements NavigationView.OnNavigati
         if(id == R.id.nav_distance) {
             Intent dist = new Intent (Home.this, Radius.class);
             startActivity(dist);
+        }
+        if(id == R.id.nav_signout) {
+            Intent sign = new Intent(Home.this, SignIn.class);
+            startActivity(sign);
         }
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
