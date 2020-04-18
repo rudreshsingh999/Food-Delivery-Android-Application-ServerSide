@@ -13,7 +13,7 @@ import com.example.app2server.R;
 
 public class OrderViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener, View.OnCreateContextMenuListener {
 
-    public TextView txtOrderId, txtOrderStatus, txtOrderPhone, txtOrderAddress;
+    public TextView txtOrderId, txtOrderStatus, txtOrderPhone, txtOrderAddress, txtOrderDistance;
     private ItemClickListener itemClickListener;
     public OrderViewHolder(@NonNull View itemView) {
         super(itemView);
@@ -22,7 +22,7 @@ public class OrderViewHolder extends RecyclerView.ViewHolder implements View.OnC
         txtOrderId = itemView.findViewById(R.id.order_id);
         txtOrderPhone = itemView.findViewById(R.id.order_phone);
         txtOrderStatus = itemView.findViewById(R.id.order_status);
-
+        txtOrderDistance = itemView.findViewById(R.id.order_dist);
         itemView.setOnClickListener(this);
         itemView.setOnCreateContextMenuListener(this);
     }

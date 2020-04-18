@@ -29,6 +29,8 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.jaredrummler.materialspinner.MaterialSpinner;
 import com.rengwuxian.materialedittext.MaterialEditText;
 
+import java.text.NumberFormat;
+import java.util.Locale;
 import java.util.Random;
 
 public class OrderStatus extends AppCompatActivity {
@@ -86,7 +88,12 @@ public class OrderStatus extends AppCompatActivity {
                     orderViewHolder.txtOrderStatus.setText(Common.convertCodeToStatus(request.getStatus()));
                     orderViewHolder.txtOrderAddress.setText(request.getAddress());
                     orderViewHolder.txtOrderPhone.setText(request.getPhone());
-
+                    double d = Double.parseDouble(request.getDistance());
+                    double price = (d-10)*5.0;
+                    Locale locale = new Locale("en", "IN");
+                    NumberFormat fmt = NumberFormat.getCurrencyInstance(locale);
+                    request.setTotal(request.getTotal() + " + " + fmt.format(price));
+                    orderViewHolder.txtOrderDistance.setText(request.getTotal());
 
                     orderViewHolder.setItemClickListener(new ItemClickListener() {
                         @Override
@@ -141,11 +148,19 @@ public class OrderStatus extends AppCompatActivity {
             public void onClick(DialogInterface dialog, int which) {
                 dialog.dismiss();
                 item.setStatus(String.valueOf(spinner.getSelectedIndex()));
+                String r = item.getTotal();
                 System.out.println(item.getPhone());
-                System.out.println(localKey);
-                System.out.println(Common.currentUser.getName());
                 System.out.println(Common.currentUser.getPhone());
-                System.out.println(item.getDistance());
+                if(item.getPhone().equals("7080102453") && Common.currentUser.getPhone().equals("9415524122")) {
+                    r = r + " + " + "10% discount";
+                    System.out.println("In");
+                }
+                item.setTotal(r);
+//                System.out.println(item.getPhone());
+//                System.out.println(localKey);
+//                System.out.println(Common.currentUser.getName());
+//                System.out.println(Common.currentUser.getPhone());
+//                System.out.println(item.getDistance());
                 requests.child(localKey).setValue(item);
                 Random rand = new Random();
                 int otp = rand.nextInt(10000000);
@@ -169,7 +184,6 @@ public class OrderStatus extends AppCompatActivity {
             @Override
             public void onClick(DialogInterface dialog, int which) {
                 dialog.dismiss();
-
             }
         });
 
