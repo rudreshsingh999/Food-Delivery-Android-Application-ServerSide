@@ -1,8 +1,8 @@
 <resources>
     <string name="app_name">App2Server</string>
-    <string name="slogan">Be there in a minute.</string>
+    <string name="slogan">A bite of home. Just a minute away.</string>
     <string name="password">Password</string>
-    <string name="phone_nummber">Phone Nummber</string>
+    <string name="phone_number">Phone Number</string>
     <string name="signin">SignIn</string>
     <string name="title_activity_home">Home</string>
     <string name="navigation_drawer_open">Open navigation drawer</string>

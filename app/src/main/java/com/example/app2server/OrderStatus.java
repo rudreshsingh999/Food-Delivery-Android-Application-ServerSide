@@ -9,6 +9,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import android.Manifest;
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.os.Bundle;
 import android.telephony.SmsManager;
@@ -70,8 +71,15 @@ public class OrderStatus extends AppCompatActivity {
         recyclerView.setLayoutManager(layoutManager);
 
         double val = Double.parseDouble(Distance.distance);
-        loadOrders(val);
 
+        if(val==0)
+        {
+            Toast.makeText(getApplicationContext(), "Set delivery radius to view available orders.", Toast.LENGTH_SHORT).show();
+            Intent homeIntent = new Intent(OrderStatus.this, Home.class);
+            startActivity(homeIntent);
+        }
+
+        loadOrders(val);
     }
 
     private void loadOrders(final double dist) {
@@ -143,7 +151,7 @@ public class OrderStatus extends AppCompatActivity {
         alertDialog.setView(view);
 
         final String localKey = key;
-        alertDialog.setPositiveButton("YES", new DialogInterface.OnClickListener() {
+        alertDialog.setPositiveButton("UPDATE", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {
                 dialog.dismiss();
@@ -165,7 +173,7 @@ public class OrderStatus extends AppCompatActivity {
                 Random rand = new Random();
                 int otp = rand.nextInt(10000000);
                 String msg = "Your order with OrderId#"+ localKey + " is confirmed.\n";
-                String msg1 = "It will be delivered to you by :\nDelivery Person Name : "+ Common.currentUser.getName()+"\nDelivery Person Phone Number : "+ Common.currentUser.getPhone() + "\n";
+                String msg1 = "It will be delivered to you by :\n"+ Common.currentUser.getName()+"\nPhone Number : "+ Common.currentUser.getPhone() + "\n";
                 String msg2 = "Your OTP is : "+ otp;
                 msg = msg + msg2;
                 System.out.println(msg);
@@ -180,7 +188,7 @@ public class OrderStatus extends AppCompatActivity {
             }
         });
 
-        alertDialog.setNegativeButton("NO", new DialogInterface.OnClickListener() {
+        alertDialog.setNegativeButton("CANCEL", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {
                 dialog.dismiss();

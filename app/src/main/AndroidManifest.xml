@@ -11,6 +11,7 @@
         android:theme="@style/AppTheme">
         <activity android:name=".Radius"></activity>
         <activity android:name=".OrderStatus" />
+        <activity android:name=".About"/>
         <activity
             android:name=".Home"
             android:label="@string/title_activity_home"

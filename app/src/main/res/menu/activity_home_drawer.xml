@@ -4,22 +4,38 @@
     tools:showIn="navigation_view">
 
     <group android:checkableBehavior="single">
+
         <item
-            android:id="@+id/nav_menu"
-            android:icon="@drawable/ic_menu_camera"
-            android:title="About" />
-        <item
-            android:id="@+id/nav_distance"
-            android:icon="@drawable/ic_menu_gallery"
-            android:title="Distance" />
+            android:id="@+id/nav_about"
+            android:icon="@drawable/information"
+            android:color="@android:color/white"
+            android:height="20sp"
+            android:title="Getting Started" />
+
+
+<!--        <item-->
+<!--            android:id="@+id/nav_distance"-->
+<!--            android:icon="@drawable/road"-->
+<!--            android:color="@android:color/white"-->
+<!--            android:height="20sp"-->
+<!--            android:title="Distance" />-->
+
         <item
             android:id="@+id/nav_orders"
-            android:icon="@drawable/ic_menu_slideshow"
-            android:title="Orders" />
+            android:height="20sp"
+            android:color="#FFFFFF"
+            android:icon="@drawable/road_order"
+            android:title="Orders"/>
+<!--            android:icon="?attr/actionModePasteDrawable"-->
+<!--            android:title="Orders" />-->
+
 
         <item
             android:id="@+id/nav_signout"
-            android:icon="@drawable/ic_menu_slideshow"
+            android:height="20sp"
+            android:color="@android:color/white"
+            android:icon="@drawable/logout"
             android:title="Sign Out" />
+
     </group>
 </menu>
