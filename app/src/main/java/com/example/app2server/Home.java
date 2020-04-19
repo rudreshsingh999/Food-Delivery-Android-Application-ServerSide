@@ -50,16 +50,21 @@ public class Home extends AppCompatActivity implements NavigationView.OnNavigati
         });
 
         Toolbar toolbar = findViewById(R.id.toolbar);
-        toolbar.setTitle("Menu Management");
+        toolbar.setTitle("Set Delivery Radius");
         setSupportActionBar(toolbar);
         FloatingActionButton fab = findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
+                if(Distance.distance.equals("0"))
+                    Toast.makeText(getApplicationContext(), "Set valid delivery radius to view available orders.", Toast.LENGTH_SHORT).show();
+                else {
+                    Intent orderIntent = new Intent(Home.this, OrderStatus.class);
+                    startActivity(orderIntent);
+                }
             }
         });
+
         DrawerLayout drawer = findViewById(R.id.drawer_layout);
         // Passing each menu ID as a set of Ids because each
         // menu should be considered as top level destinations.
@@ -105,9 +110,9 @@ public class Home extends AppCompatActivity implements NavigationView.OnNavigati
             Intent orders = new Intent (Home.this, OrderStatus.class);
             startActivity(orders);
         }
-        if(id == R.id.nav_distance) {
-            Intent dist = new Intent (Home.this, Radius.class);
-            startActivity(dist);
+        if(id == R.id.nav_about) {
+            Intent about = new Intent (Home.this, About.class);
+            startActivity(about);
         }
         if(id == R.id.nav_signout) {
             Intent sign = new Intent(Home.this, SignIn.class);

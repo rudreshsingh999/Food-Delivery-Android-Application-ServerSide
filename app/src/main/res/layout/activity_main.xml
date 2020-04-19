@@ -16,17 +16,31 @@
         android:layout_alignParentBottom="true"
         android:layout_height="wrap_content">
 
+        <!--        <info.hoang8f.widget.FButton-->
+        <!--            android:id="@+id/btnSignUp"-->
+        <!--            android:layout_width="202dp"-->
+        <!--            android:layout_height="wrap_content"-->
+        <!--            android:text="Sign Up"-->
+        <!--            android:textColor="@android:color/white"-->
+        <!--            android:layout_weight="1"-->
+        <!--            android:layout_margin="8dp"-->
+        <!--            app:shadowColor="@android:color/black"-->
+        <!--            app:shadowEnabled="true"-->
+        <!--            app:shadowHeight="5dp"-->
+        <!--            app:cornerRadius="4dp"-->
+        <!--            />-->
+
         <Button
             android:id="@+id/btnSignIn"
+            style="?android:attr/buttonBarButtonStyle"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:fontFamily="@font/montserrat"
+            android:shadowColor="@android:color/black"
+            android:background="#9E5104"
             android:text="@string/signInButton"
-            android:textAlignment="center"
-            android:textAllCaps="true"
-            android:textColor="#FFFFFF"
-            android:textColorHighlight="#FFFFFF"
-            android:textColorHint="#FFFFFF"
-            android:textColorLink="#FFFFFF"
+            android:textColor="@android:color/white"
             android:textSize="18sp" />
 
     </LinearLayout>
@@ -60,5 +74,3 @@
 
 
 </RelativeLayout>
-
-

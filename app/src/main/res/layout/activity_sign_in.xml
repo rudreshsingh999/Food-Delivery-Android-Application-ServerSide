@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/dark"
     tools:context=".SignIn">
 
 
@@ -17,54 +18,82 @@
 
         <com.rengwuxian.materialedittext.MaterialEditText
             android:id="@+id/edit_phone"
-            android:hint="@string/phone_nummber"
-            android:inputType="phone"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-        </com.rengwuxian.materialedittext.MaterialEditText>
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/montserrat"
+            android:gravity="center"
+            android:hint="Phone Number"
+            android:text="9887112234"
+            android:inputType="phone"
+            android:textColor="@android:color/white"
+            android:textColorHint="@android:color/white"
+            app:met_baseColor="@android:color/white"
+            app:met_floatingLabel="highlight"
+            app:met_maxCharacters="10"
+            app:met_primaryColor="@android:color/white"
+            app:met_singleLineEllipsis="true"
+            android:textSize="34sp"></com.rengwuxian.materialedittext.MaterialEditText>
 
         <com.rengwuxian.materialedittext.MaterialEditText
             android:id="@+id/edit_password"
-            android:hint="@string/password"
-            android:inputType="textPassword"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-        </com.rengwuxian.materialedittext.MaterialEditText>
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/montserrat"
+            android:gravity="center"
+            android:hint="Password"
+            android:text="1234"
+            android:inputType="textPassword"
+            android:textColor="@android:color/white"
+            android:textColorHint="@android:color/white"
+            app:met_baseColor="@android:color/white"
+            app:met_floatingLabel="highlight"
+            app:met_maxCharacters="10"
+            app:met_primaryColor="@android:color/white"
+            app:met_singleLineEllipsis="true"
+            android:textSize="34sp"></com.rengwuxian.materialedittext.MaterialEditText>
+
     </LinearLayout>
 
+    <!--    <Button-->
+    <!--        android:id="@+id/signIn"-->
+    <!--        android:layout_width="wrap_content"-->
+    <!--        android:layout_height="wrap_content"-->
+    <!--        android:layout_alignParentEnd="true"-->
+    <!--        android:layout_alignParentBottom="true"-->
+    <!--        android:layout_marginEnd="163dp"-->
+    <!--        android:layout_marginBottom="182dp"-->
+    <!--        android:text="SignIn" />-->
+
+    <!--    <info.hoang8f.widget.FButton-->
     <Button
         android:id="@+id/signin"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginBottom="8dp"
+        android:background="#9E5104"
+        android:fontFamily="@font/montserrat"
+        android:shadowColor="@android:color/black"
+        android:text="Sign In"
+        android:textColor="@android:color/white" />
+
+    <com.google.android.gms.common.SignInButton
+        android:id="@+id/googleBtn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
-        android:layout_marginEnd="163dp"
-        android:layout_marginBottom="182dp"
-        android:text="@string/signin" />
-
-    <com.google.android.gms.common.SignInButton
-        android:id = "@+id/googleBtn"
-        android:layout_alignParentBottom="true"
-        android:layout_alignParentEnd="true"
-        android:layout_marginEnd="140dp"
-        android:layout_marginBottom="45dp"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content">
+        android:layout_centerInParent="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginEnd="134dp"
+        android:layout_marginBottom="171dp">
 
     </com.google.android.gms.common.SignInButton>
 
-    <!--    <info.hoang8f.widget.FButton-->
-    <!--        android:layout_width="match_parent"-->
-    <!--        android:layout_height="wrap_content"-->
-    <!--        android:id="@+id/signIn"-->
-    <!--        android:text="Sign In"-->
-    <!--        android:textColor="@android:color/white"-->
-    <!--        android:layout_marginRight="8dp"-->
-    <!--        android:layout_marginLeft="8dp"-->
-    <!--        android:layout_alignParentBottom="true"-->
-    <!--        android:layout_margin="8dp"-->
-    <!--        app:cornerRadius="4dp">-->
-
 
 </RelativeLayout>
-
