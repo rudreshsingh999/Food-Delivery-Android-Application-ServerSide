@@ -11,7 +11,7 @@ public class Common {
 
     public static String convertCodeToStatus(String status) {
         if(status.equals("0"))
-            return "Order placed.";
+            return "Order placed";
         else if(status.equals("1"))
             return "On my Way!";
         else

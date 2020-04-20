@@ -17,6 +17,7 @@ import com.google.android.material.navigation.NavigationView;
 import com.rengwuxian.materialedittext.MaterialEditText;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.core.view.GravityCompat;
 import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
@@ -32,6 +33,7 @@ public class Home extends AppCompatActivity implements NavigationView.OnNavigati
     TextView txtfullName;
     MaterialEditText distance;
     Button set;
+    private ActionBarDrawerToggle abdt;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -74,6 +76,11 @@ public class Home extends AppCompatActivity implements NavigationView.OnNavigati
                 .build();
         NavigationView navigationView = findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
+
+        ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
+                this, drawer, toolbar, R.string.Open, R.string.Close);
+        drawer.setDrawerListener(toggle);
+        toggle.syncState();
 
         View headerView = navigationView.getHeaderView(0);
         txtfullName = headerView.findViewById(R.id.txtfullName);
