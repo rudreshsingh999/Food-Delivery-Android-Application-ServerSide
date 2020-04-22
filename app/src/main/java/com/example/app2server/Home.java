@@ -47,7 +47,7 @@ public class Home extends AppCompatActivity implements NavigationView.OnNavigati
             public void onClick(View v) {
                 String r = distance.getText().toString();
                 Distance.distance = r;
-                Toast.makeText(Home.this, "Radius set to " + r, Toast.LENGTH_SHORT).show();
+                Toast.makeText(Home.this, "Radius set to " + r + " Km", Toast.LENGTH_SHORT).show();
             }
         });
 

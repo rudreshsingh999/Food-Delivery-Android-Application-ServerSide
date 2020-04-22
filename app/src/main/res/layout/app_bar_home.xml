@@ -14,8 +14,8 @@
         <androidx.appcompat.widget.Toolbar
             android:id="@+id/toolbar"
             android:layout_width="match_parent"
-            android:layout_height="?attr/actionBarSize"
-            android:background="?attr/colorPrimary"
+            android:layout_height="60dp"
+            android:background="@color/fbutton_color_carrot"
             app:popupTheme="@style/AppTheme.PopupOverlay" />
 
     </com.google.android.material.appbar.AppBarLayout>
@@ -26,11 +26,12 @@
         android:id="@+id/fab"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_gravity="bottom|end"
-        android:layout_margin="@dimen/fab_margin"
+        android:layout_gravity="top|end"
+        android:layout_marginTop="2.5dp"
+        android:layout_marginRight="5dp"
+        android:layout_marginBottom="2.5dp"
         android:background="@android:color/white"
         app:backgroundTint="#FFFFFF"
-        app:srcCompat="@drawable/road_order"/>
-<!--        app:srcCompat="?attr/actionModePasteDrawable" />-->
+        app:srcCompat="@drawable/road_order" />
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>
