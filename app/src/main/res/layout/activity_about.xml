@@ -6,12 +6,30 @@
     android:layout_height="match_parent"
     tools:context=".About">
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:id = "@+id/about"
-        android:background="@drawable/dark"
+    <ImageView
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:scaleType="centerCrop"
+        android:src="@drawable/background_blur"/>
 
+    <TextView
+        android:id="@+id/toolbar_2"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:background="@color/fbutton_color_carrot"
+        android:text="Let's Get Started!"
+        android:textColor="@android:color/white"
+        android:textSize="20sp"
+        android:gravity="center_vertical"
+        android:paddingStart="10dp"
+        android:textStyle="bold"
+        android:fontFamily="@font/montserrat"></TextView>
 
-    </androidx.recyclerview.widget.RecyclerView>
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/about"
+        android:layout_width="match_parent"
+        android:layout_height="600dp"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="60dp"></androidx.recyclerview.widget.RecyclerView>
+
 </RelativeLayout>

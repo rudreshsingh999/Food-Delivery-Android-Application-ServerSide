@@ -4,10 +4,13 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/dark"
     tools:context=".MainActivity">
 
-
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scaleType="centerCrop"
+        android:src="@drawable/background_1"/>
 
     <LinearLayout
         android:orientation="horizontal"
@@ -16,20 +19,6 @@
         android:layout_alignParentBottom="true"
         android:layout_height="wrap_content">
 
-        <!--        <info.hoang8f.widget.FButton-->
-        <!--            android:id="@+id/btnSignUp"-->
-        <!--            android:layout_width="202dp"-->
-        <!--            android:layout_height="wrap_content"-->
-        <!--            android:text="Sign Up"-->
-        <!--            android:textColor="@android:color/white"-->
-        <!--            android:layout_weight="1"-->
-        <!--            android:layout_margin="8dp"-->
-        <!--            app:shadowColor="@android:color/black"-->
-        <!--            app:shadowEnabled="true"-->
-        <!--            app:shadowHeight="5dp"-->
-        <!--            app:cornerRadius="4dp"-->
-        <!--            />-->
-
         <Button
             android:id="@+id/btnSignIn"
             style="?android:attr/buttonBarButtonStyle"
@@ -37,10 +26,13 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:fontFamily="@font/montserrat"
+            android:drawableLeft="@drawable/sign_in_foreground"
             android:shadowColor="@android:color/black"
-            android:background="#9E5104"
+            android:background="@drawable/button_round"
             android:text="@string/signInButton"
             android:textColor="@android:color/white"
+            android:textAlignment="textStart"
+            android:paddingLeft="170dp"
             android:textSize="18sp" />
 
     </LinearLayout>
@@ -50,7 +42,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
-        android:layout_marginTop="2dp"
+        android:layout_centerVertical="true"
         android:adjustViewBounds="true"
         android:cropToPadding="true"
         android:scaleType="centerCrop"
@@ -63,7 +55,7 @@
         android:layout_alignStart="@id/imageView3"
         android:layout_alignEnd="@id/imageView3"
 
-        android:layout_marginTop="275dp"
+        android:layout_marginTop="300dp"
         android:layout_marginBottom="1dp"
         android:fadingEdge="horizontal|vertical"
         android:fontFamily="@font/montserrat"

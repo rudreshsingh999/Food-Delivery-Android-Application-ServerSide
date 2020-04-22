@@ -6,10 +6,23 @@
     android:layout_height="match_parent"
     tools:context=".OrderStatus">
 
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:background="@color/fbutton_color_carrot"
+        app:popupTheme="@style/AppTheme.PopupOverlay" />
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scaleType="centerCrop"
+        android:src="@drawable/background_blur"/>
+
     <androidx.recyclerview.widget.RecyclerView
         android:id = "@+id/listOrders"
-        android:background="@drawable/dark"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
     </androidx.recyclerview.widget.RecyclerView>
+
 </RelativeLayout>
