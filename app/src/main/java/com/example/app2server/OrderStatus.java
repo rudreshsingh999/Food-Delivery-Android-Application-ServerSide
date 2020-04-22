@@ -72,7 +72,7 @@ public class OrderStatus extends AppCompatActivity {
 
         double val = Double.parseDouble(Distance.distance);
 
-        if(val==0)
+        if(val == 0)
         {
             Toast.makeText(getApplicationContext(), "Set delivery radius to view available orders.", Toast.LENGTH_SHORT).show();
             Intent homeIntent = new Intent(OrderStatus.this, Home.class);
@@ -109,6 +109,13 @@ public class OrderStatus extends AppCompatActivity {
                             // Implemented to fix crashes when this item is clicked
                         }
                     });
+                }
+                else {
+                    orderViewHolder.txtOrderId.setText(adapter.getRef(i).getKey());
+                    orderViewHolder.txtOrderStatus.setText("This Order is Not Within " + dist + " KM");
+                    orderViewHolder.txtOrderAddress.setText("");
+                    orderViewHolder.txtOrderPhone.setText("Distance is " + request.getDistance() + " KM");
+                    orderViewHolder.txtOrderDistance.setText("");
                 }
             }
         };
