@@ -11,10 +11,10 @@ public class Common {
 
     public static String convertCodeToStatus(String status) {
         if(status.equals("0"))
-            return "Order placed";
+            return "Order Placed";
         else if(status.equals("1"))
-            return "On my Way!";
+            return "On My Way!";
         else
-            return "Order shipped.";
+            return "Order Delivered";
     }
 }

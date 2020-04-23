@@ -32,4 +32,26 @@
         android:layout_alignParentTop="true"
         android:layout_marginTop="60dp"></androidx.recyclerview.widget.RecyclerView>
 
+    <TextView
+        android:id="@+id/editText"
+        android:clickable="false"
+        android:focusable="false"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_centerHorizontal="true"
+        android:background="@drawable/border"
+        android:textColor="#fff"
+        android:text="Just anyone can get started with helping out by delivering meals to users, wherever you are, whenever you want.\n\nWith BiteSize, it's reliable, quick, and hassle-free.\n\nFollow these three simple steps and you'll be on your way in no time!\n\nStep 1: Set your desired radius for delivery in the main page by clicking 'Set Distance'.\n\nStep 2: Select Orders from the navigation drawer (or click on the icon) to view all available orders within your chosen radius.\n\nStep 3: Once you have chosen an order you'd like to deliver, press on it, and update the status to let your customer know you're on your way!\n\nThat's it.\n\nSafe journey!"
+        android:ems="10"
+        android:fontFamily="@font/montserrat"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp"
+        android:paddingBottom="5dp"
+        android:paddingTop="5dp"
+        android:textSize="16sp"
+        android:layout_margin="5dp"
+        android:gravity="start|top"
+        android:inputType="textMultiLine" />
+
 </RelativeLayout>
