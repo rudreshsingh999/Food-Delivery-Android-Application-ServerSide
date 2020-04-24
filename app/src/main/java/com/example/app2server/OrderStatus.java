@@ -11,6 +11,7 @@ import android.Manifest;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.pm.PackageManager;
+import android.net.Uri;
 import android.os.Bundle;
 import android.telephony.SmsManager;
 import android.view.LayoutInflater;
@@ -192,6 +193,10 @@ public class OrderStatus extends AppCompatActivity {
                 else {
                     Toast.makeText(OrderStatus.this, "Permission Denied", Toast.LENGTH_SHORT).show();
                 }
+
+                String uri = "geo:0,0?q=" + item.getAddress() + "(Treasure)";
+                Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(uri));
+                startActivity(intent);
             }
         });
 
