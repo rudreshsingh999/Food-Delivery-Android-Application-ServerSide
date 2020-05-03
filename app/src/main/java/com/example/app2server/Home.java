@@ -125,6 +125,9 @@ public class Home extends AppCompatActivity implements NavigationView.OnNavigati
             Intent sign = new Intent(Home.this, SignIn.class);
             startActivity(sign);
         }
+        if(id == R.id.nav_map) {
+            startActivity(new Intent(Home.this, Radius.class));
+        }
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
