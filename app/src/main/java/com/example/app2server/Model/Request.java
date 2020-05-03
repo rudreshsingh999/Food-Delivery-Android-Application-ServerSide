@@ -12,10 +12,12 @@ public class Request {
     private List<Order> foods;
     private String status;
     private String distance;
+    private String latitude;
+    private String longitude;
     public Request() {
     }
 
-    public Request(String phone, String name, String address, String total, List<Order> foods, String distance) {
+    public Request(String phone, String name, String address, String total, List<Order> foods, String distance, String latitude, String longitude) {
         this.phone = phone;
         this.name = name;
         this.address = address;
@@ -23,6 +25,24 @@ public class Request {
         this.foods = foods;
         this.status = "0";
         this.distance = distance;
+        this.latitude = latitude;
+        this.longitude = longitude;
+    }
+
+    public String getLatitude() {
+        return latitude;
+    }
+
+    public void setLatitude(String latitude) {
+        this.latitude = latitude;
+    }
+
+    public String getLongitude() {
+        return longitude;
+    }
+
+    public void setLongitude(String longitute) {
+        this.longitude = longitute;
     }
 
     public String getDistance() {

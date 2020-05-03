@@ -20,6 +20,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.app2server.Common.Distance;
+import com.example.app2server.Model.Request;
 import com.google.android.gms.common.ConnectionResult;
 import com.google.android.gms.common.api.GoogleApiClient;
 import com.google.android.gms.common.api.ResultCallback;
@@ -34,11 +35,17 @@ import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.MapFragment;
 import com.google.android.gms.maps.OnMapReadyCallback;
+import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import com.google.android.gms.maps.model.Circle;
 import com.google.android.gms.maps.model.CircleOptions;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.Marker;
 import com.google.android.gms.maps.model.MarkerOptions;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 import com.rengwuxian.materialedittext.MaterialEditText;
 
 public class Radius extends AppCompatActivity
@@ -57,12 +64,19 @@ public class Radius extends AppCompatActivity
     private GoogleApiClient googleApiClient;
     private MapFragment mapFragment;
     private TextView textLat, textLong;
+
+    FirebaseDatabase db;
+    DatabaseReference requests;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_radius);
         textLat = (TextView) findViewById(R.id.lat);
         textLong = (TextView) findViewById(R.id.lon);
+
+        db = FirebaseDatabase.getInstance();
+        requests = db.getReference("Requests");
 
         // initialize GoogleMaps
         initGMaps();
@@ -256,6 +270,26 @@ public class Radius extends AppCompatActivity
             }
 
         }
+        //getMarkers();
+    }
+
+    private void getMarkers() {
+        requests.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+
+//                MarkerOptions markerOptions = new MarkerOptions()
+//                        .position(latlng)
+//                        .icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_BLUE))
+//                        .title(title);
+//                map.addMarker(markerOptions);
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+
+            }
+        });
     }
 
     private static final long GEO_DURATION = 60 * 60 * 1000;
